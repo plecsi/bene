@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-blue-base text-base;
+  }
+
+  :root {
+    --color-primary: #0b1c2d;
+    --shadow: #222;
+    --btn-hover: #3893B1;
+  }
+
+  a {
+    @apply no-underline
+  }
+
+  .btn {
+    @apply transition ease-in-out;
+
+    &-primary {
+      @apply bg-blue-200 text-white px-5 py-3 rounded-xl hover:bg-blue-300;
+    }
+
+    &-backbtn {
+      @apply bg-transparent text-blue-100 hover:text-blue-300;
+    }
+  }
+
+  ul {
+    @apply flex flex-col justify-center;
+  }
+
+  .list {
+    @apply flex flex-wrap flex-col justify-center;
+
+    &-items {
+      @apply flex gap-5 justify-center items-center text-xl text-blue-200 mb-3;
+    }
+  }
+}

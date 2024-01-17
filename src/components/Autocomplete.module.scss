@@ -1,0 +1,32 @@
+.Autocomplete {
+    @apply flex flex-wrap items-center justify-between;
+
+  .ul {
+    @apply w-full text-blue-100 text-2xl;
+
+    li {
+        @apply cursor-pointer hover:text-btnHover transition ease-in-out;
+
+        &:hover .highlight {
+            @apply text-btnHover;
+        }
+    }
+  }
+  
+  .highlight {
+    @apply text-blue-900;
+  }
+}
+
+.fieldset {
+    @apply max-w-[300px] relative mb-1;
+
+    .input {
+        @apply border-b border-blue-100 bg-transparent w-full focus:outline-none text-blue-900;
+    }
+
+    span {
+        @apply absolute right-0 top-1/2 -translate-y-1/2 text-blue-900;
+    }
+}
+

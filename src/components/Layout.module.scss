@@ -1,0 +1,5 @@
+.App {
+    @apply max-w-[500px] grid mx-auto;
+    grid-template-rows: 120px auto 120px;
+    grid-template-columns: 100%;
+}

@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'bene';
+  src:
+    url('bene.ttf?h3i801') format('truetype'),
+    url('bene.woff?h3i801') format('woff'),
+    url('bene.svg?h3i801#bene') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'bene' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon {
+  --icon-chevron-left: "\e900";
+  --icon-chevron-down: "\e901";
+  --icon-thermometer: "\e902";
+  --icon-sunrise: "\e903";
+  --icon-sunset: "\e904";
+
+  @apply text-xl text-blue-100 hover:text-blue-300;
+
+  &-chevron-left {
+    &:before {
+      content: var(--icon-chevron-left);
+    }
+  }
+
+  &-chevron-down {
+    &:before {
+      content: var(--icon-chevron-down);
+    }
+  }
+
+  &-thermometer {
+    &:before {
+      content: var(--icon-thermometer);
+    }
+  }
+
+  &-sunrise {
+    &:before {
+      content: var(--icon-sunrise);
+    }
+  }
+
+  &-sunset {
+    &:before {
+      content: var(--icon-sunset);
+    }
+  }
+}
