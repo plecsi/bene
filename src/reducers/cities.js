@@ -3,7 +3,7 @@ import { apiService } from "../hooks/apiService";
 
 const initialState = {
     capitals: [],
-    selectedCities: [],
+    selectedCities: JSON.parse(localStorage.getItem('cities')),
     status: 'idle',
     error: null
 }

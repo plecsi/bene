@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { selectedCity, selectedCapitals } from "../reducers/cities"
 import { useNavigate } from "react-router-dom"
 import styles from "./Autocomplete.module.scss"
+import { useLocalStorage } from "../hooks/localStorage"
+
 
 const Autocomplete = ({ suggestion, limit }) => {
     const [suggestions] = useState(suggestion)
@@ -17,6 +19,7 @@ const Autocomplete = ({ suggestion, limit }) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const storeOfCapital = useSelector(selectedCapitals)
+    const { store, readStore } = useLocalStorage()
 
     const handleChange = (e) => {
         const value = e.currentTarget.value
@@ -52,6 +55,13 @@ const Autocomplete = ({ suggestion, limit }) => {
 
     const handleSubmit = (e) => {
         dispatch(selectedCity(autocompleteState.currentValue))
+        let localStoreage = readStore('cities')
+        if (!localStoreage) {
+            localStoreage = []
+
+        }
+        localStoreage.push(autocompleteState.currentValue)
+        store('cities', localStoreage)
         navigate('/')
     }
 

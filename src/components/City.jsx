@@ -26,12 +26,14 @@ const CityDetails = ({ name, main, sys, weather }) => {
                     <b>{name}</b>
                 </div>
                 <div className="list-items flex flex-col flex-wrap">
-                    {weather?.map(w => {
-                        return (<>
-                            <img src={`http://openweathermap.org/img/w/${w.icon}.png`}
-                                alt="wthr img" key={w} />
-                            <small className="text-xs text-blue-900">{w.description}</small>
-                        </>)
+                    {weather?.map((w, i) => {
+                        return (
+                            <div key={i}>
+                                <img src={`http://openweathermap.org/img/w/${w.icon}.png`}
+                                    alt="wthr img" />
+                                <small className="text-xs text-blue-900">{w.description}</small>
+                            </div>
+                        )
                     })}
                 </div>
                 <div className="list-items">
